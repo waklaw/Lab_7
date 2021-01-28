@@ -1,0 +1,12 @@
+﻿@page
+@model Shop.UI.Pages.Accounts.LoginModel
+@{
+}
+
+<form method="post">
+    <label class="label">Логін</label>
+    <input class="input" asp-for="Input.Username" />
+    <label class="label">Пароль</label>
+    <input class="input" asp-for="Input.Password" />
+    <input class="button is-success" type="submit" name="name" value="Увійти" />
+</form>

@@ -1,0 +1,43 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="section">
+    <div class="columns is-multiline">
+        @{
+            
+                foreach (var p in Model.Products)
+                {
+                <div class="column is-4-desktop is-4-tablet is-6-mobile">
+                <a class="card" asp-page="Product" asp-route-name="@p.Name.Replace(" ", "-")">
+                    <div class="card-image">
+                        <figure class="image is-4by3">
+                            <img src="~/images/book.png" />
+                        </figure>
+                    </div>
+                    <div class="card-content">
+                        <p class="title is-size-5">
+                            @p.Name - @p.Author
+                        </p>
+                        <p class="title is-size-6">
+                            @p.Value
+                        </p>
+                        <p class="subtitle">
+                            @p.Genre - @p.Description
+                        </p>
+
+                        <div class="content">
+
+                        </div>
+                    </div>
+                </a>
+                </div>
+
+                }
+            
+
+        }
+    </div>
+</div>

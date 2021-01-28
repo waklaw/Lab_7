@@ -1,0 +1,67 @@
+﻿@page
+@model Shop.UI.Pages.Checkout.CustomerInformationModel
+@{
+}
+
+<div class="columns">
+    <div class="column is-6">
+        <form method="post">
+            <div class="field">
+                <p class="control"></p>
+                <label class="label">Ім'я</label>
+                <input class="input" asp-for="CustomerInformation.FirstName" />
+                <span asp-validation-for="CustomerInformation.FirstName"></span>
+            </div>
+            <div class="field">
+                <p class="control"></p>
+                <label class="label">Фамілія</label>
+                <input class="input" asp-for="CustomerInformation.LastName" />
+                <span asp-validation-for="CustomerInformation.LastName"></span>
+            </div>
+            <div class="field">
+                <p class="control"></p>
+                <label class="label">Моб. телефон</label>
+                <input class="input" asp-for="CustomerInformation.PhoneNumber" />
+                <span asp-validation-for="CustomerInformation.PhoneNumber"></span>
+            </div>
+            <div class="field">
+                <p class="control"></p>
+                <label class="label">Email</label>
+                <input class="input" asp-for="CustomerInformation.Email" />
+                <span asp-validation-for="CustomerInformation.Email"></span>
+            </div>
+            <div class="field">
+                <p class="control"></p>
+                <label class="label">Адреса 1</label>
+                <input class="input" asp-for="CustomerInformation.Address1" />
+                <span asp-validation-for="CustomerInformation.Address1"></span>
+            </div>
+            <div class="field">
+                <p class="control"></p>
+                <label class="label">Адреса 2</label>
+                <input class="input" asp-for="CustomerInformation.Address2" />
+                <span asp-validation-for="CustomerInformation.Address2"></span>
+            </div>
+            <div class="field">
+                <p class="control"></p>
+                <label class="label">Місто</label>
+                <input class="input" asp-for="CustomerInformation.City" />
+                <span asp-validation-for="CustomerInformation.City"></span>
+            </div>
+            <div class="field">
+                <p class="control"></p>
+                <label class="label">Поштовий індекс</label>
+                <input class="input" asp-for="CustomerInformation.PostCode" />
+                <span asp-validation-for="CustomerInformation.PostCode"></span>
+            </div>
+
+            <div>
+                <button class="button is-success" type="submit">Придбати</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="column is-6">
+        <vc:cart view="Default"></vc:cart>
+    </div>
+</div>

@@ -1,0 +1,54 @@
+﻿@page "{name}"
+@model Shop.UI.Pages.ProductModel
+@{
+}
+
+<div class="hero">
+    <div class="hero-body">
+        <div class="container">
+            <div class="columns">
+                <div class="is-6">
+                    <figure class="image">
+                        <img src="/images/book.png"/>
+                    </figure>
+                </div>
+                <div class="is6"></div>
+                <section class="content">
+                    <header>
+                        <p class="title">@Model.Product.Name</p>
+                        <p class="subtitle">@Model.Product.Description</p>
+                        <p>@Model.Product.Author</p>
+                        <p>@Model.Product.Genre</p>
+
+                        <p>@Model.Product.Value</p>
+                    </header>
+                    <main>
+
+                    </main>
+                    <footer>
+                        <form method="post">
+
+                            <div class="field">
+                                <label class="label">Формат</label>
+                                <p class="control">
+                                    <div class="select">
+                                        <select asp-for="CartViewModel.StockId">
+                                            @foreach (var s in Model.Product.Stock)
+                                            {
+                                                <option value="@s.Id">@s.Description</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </p>
+                            </div>
+                            
+                            <label class="label">Кількість(якщо паперова)</label>
+                            <input class="input" asp-for="CartViewModel.Qty" value="1"/>
+                            <button class="button is-success" type="submit">Придбати</button>
+                        </form>
+                    </footer>
+                </section>
+            </div>
+        </div>
+    </div>
+</div>

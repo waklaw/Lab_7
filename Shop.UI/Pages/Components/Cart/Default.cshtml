@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Shop.Application.Cart.GetCart.Response>
+
+    @{
+
+    }
+
+    <div>
+        <p class="title">Кошик</p>
+        @foreach (var product in Model)
+        {
+    <article class="media">
+        <figure class="media-left">
+            <p class="image is-64x64">
+                <img src="~/images/book.png" />
+            </p>
+        </figure>
+        <div class="media-content">
+            <div class="content">
+                <p class="title">@product.Name</p>
+                <p class="subtitle">Формат @product.StockId</p>
+                <p class="subtitle">Кількість: @product.Qty</p>
+                <p class="subtitle">Ціна: @product.Value</p>
+                <hr />
+            </div>
+        </div>
+    </article>
+        }
+    </div>
